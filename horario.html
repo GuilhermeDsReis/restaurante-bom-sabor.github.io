@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Declaração do tipo de documento HTML e definição do idioma como português do Brasil -->
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <!-- Configura a viewport para garantir que a página seja responsiva em dispositivos móveis -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Inclui o CSS do Bootstrap para estilização e design responsivo -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Inclui um arquivo CSS personalizado -->
+    <title>Restaurante - Bom Sabor</title>
+    <!-- Define o título da página -->
+</head>
+
+<body class="container modal-lg">
+    <!-- Início do corpo do documento HTML -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger p-4">
+        <!-- Barra de navegação com classes do Bootstrap para estilização -->
+        <a class="navbar-brand text-white font-weight-bold " href="#">Restaurante Bom Sabor</a>
+        <!-- Link da marca do restaurante -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Botão para colapsar a barra de navegação em dispositivos menores -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Div que contém os itens da barra de navegação -->
+            <ul class="navbar-nav">
+                <!-- Lista de itens de navegação -->
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="index.html">Inicio<span class="sr-only"></span></a>
+                    <!-- Link para a página inicial -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="cardapio.html">Cardapio</a>
+                    <!-- Link para a página do cardápio -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="formulario.html">Contato</a>
+                    <!-- Link para a página de cadastro -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="horario">Horário de funcionamento</a>
+                    <!-- Link para a página de horário de funcionamento -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Div container para centralizar o conteúdo -->
+        <h1 class="text-center p-4 mt-3">Horários de funcionamento:</h1>
+        <!-- Cabeçalho centralizado com padding -->
+    </div>
+
+    <div class="container p-3 bg-light shadow rounded-4">
+        <table class="table text-center""> 
+            <thead>
+              <tr>
+                <th class="bg-danger text-white" scope="col">Dia</th>
+                <th class="bg-danger text-white" scope="col">Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Segunda a Sexta</th>
+                <td>Das 11:30 até 22:00</td>
+              </tr>
+              <tr>
+                <th scope="row">Sabado</th>
+                <td>Das 11:30 até 15:00</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Domingo e Feriados</th>
+                <td>Das 12:00 até 16:00</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+</body>
+
+<footer class="bg-danger text-white text-center p-4 mt-5 rounded-3">
+    <!-- Rodapé com fundo vermelho, texto branco, centralizado e padding -->
+    <p>@2024 Restaurante Bom Sabor. Todos os direitos reservados.
+        Feito por: GUILHERME DIAS REIS e GABRIEL MERONHA VICENTE
+    </p>
+    <!-- Texto de direitos autorais -->
+</footer>
+
+</html>
