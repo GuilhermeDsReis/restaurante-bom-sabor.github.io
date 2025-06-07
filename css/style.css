@@ -4,6 +4,51 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.geek-footer {
+    background: #dc3545;
+    color: #fff;
+}
+
+.geek-card {
+    width: 16rem;
+    min-height: 420px;
+}
+
+.geek-navbar {
+    background: #dc3545 !important;
+}
+
+.geek-navbar .nav-link,
+.geek-navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.geek-navbar .nav-link.active,
+.geek-navbar .nav-link:hover {
+    background-color: #c82333 !important;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+@media (max-width: 767px) {
+    .geek-card {
+        width: 100%;
+        min-height: unset;
+    }
+}
+
 /* body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
