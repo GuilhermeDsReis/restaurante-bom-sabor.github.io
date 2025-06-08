@@ -20,6 +20,26 @@ function adicionarProduto(produto) {
     setProdutos(produtos);
 }
 
+// Remove um produto pelo índice e salva
+function removerProduto(idx) {
+    const produtos = getProdutos();
+    produtos.splice(idx, 1);
+    setProdutos(produtos);
+}
+
+// Atualiza os selects das modais de excluir e editar
+function atualizarSelects() {
+    const produtos = getProdutos();
+    const excluirSelect = document.getElementById('excluirProduto');
+    const editarSelect = document.getElementById('editarProduto');
+    if (excluirSelect) {
+        excluirSelect.innerHTML = produtos.map((p, i) => `<option value="${i}">${p.nome}</option>`).join('');
+    }
+    if (editarSelect) {
+        editarSelect.innerHTML = produtos.map((p, i) => `<option value="${i}">${p.nome}</option>`).join('');
+    }
+}
+
 // Exibe produtos na página
 function exibirProdutos() {
     const produtos = getProdutos();

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<!-- Declaração do tipo de documento HTML e definição do idioma como português do Brasil -->
-<html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,15 +19,6 @@
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div
-                    class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center gap-2 ms-lg-3 mt-3 mt-lg-0 p-3">
-                    <a href="#" class="btn btn-light me-lg-2 w-100 w-lg-auto">Login</a>
-                    <a href="#" class="btn btn-light w-100 w-lg-auto">Cadastrar</a>
-                </div>
-            </div>
-
     </nav>
 
     <main class="main-content" style="padding-top: 50px;">
@@ -40,11 +28,16 @@
 
         <div class="container py-5">
 
-            <div class="d-flex justify-content-start mb-3">
-                <a href="index.html" class="btn btn-outline-danger d-flex align-items-center gap-2">
-                    <span class="bi bi-house-door"></span> Início
-                </a>
-            </div>
+           <div class="d-flex justify-content-start mb-3 gap-3">
+            <a href="index.html" class="btn btn-outline-danger mb-5 p-3">
+                <span class="bi bi-arrow-left"></span> Voltar ao Início
+            </a>
+
+            <a href="produtos.html" class="btn btn-outline-danger mb-5 p-3">
+                <span class="bi bi-box-seam"></span> Produtos
+            </a>
+            
+        </div>
 
             <h1 class="fw-bold text-left mb-2 ">Gestão de Produtos</h1>
 
@@ -54,24 +47,28 @@
             </p>
 
             <div class="container py-5">
-                <h2 class="fw-bold text-left mb-2 ">Selecione uma ação</h2>
-
-                <button type="button" class="btn btn-outline-danger mb-3 p-3 mt-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    Cadastrar Produto
-                </button>
-                <button type="button" class="btn btn-outline-danger mb-3 p-3 mt-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2">
-                    Listar Produtos
-                </button>
-                <button type="button" class="btn btn-outline-danger mb-3 p-3 mt-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal3">
-                    Excluir Produto
-                </button>
-                <button type="button" class="btn btn-outline-danger mb-3 p-3 mt-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal4">
-                    Editar Produto
-                </button>
+                <div class="card shadow-sm bg-light rounded p-4">
+                    <div class="card-body text-center">
+                        <h2 class="fw-bold mb-4">Selecione uma ação</h2>
+                        <div class="d-flex flex-md-row flex-column justify-content-center align-items-center gap-4">
+                            <button type="button" class="btn btn-outline-primary mb-3 px-5 py-4 mt-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Cadastrar Produto
+                            </button>
+                            <button type="button" class="btn btn-outline-primary mb-3 px-5 py-4 mt-3" id="btnListarProdutos">
+                                Listar Produtos
+                            </button>
+                            <button type="button" class="btn btn-outline-primary mb-3 px-5 py-4 mt-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal4">
+                                Editar Produto
+                            </button>
+                            <button type="button" class="btn btn-outline-danger mb-3 px-5 py-4 mt-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal3">
+                                Excluir Produto
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -82,7 +79,7 @@
 
 <!-- Modal Cadastrar Produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="modalCadastrarLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg"><!-- Aumenta o tamanho da janela -->
         <div class="modal-content">
             <form id="formCadastrar">
                 <div class="modal-header">
@@ -92,63 +89,57 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nomeProduto" class="form-label">Nome do Produto</label>
-                        <input type="text" class="form-control" id="nomeProduto" required>
+                        <input type="text" class="form-control py-3" id="nomeProduto" required><!-- padding aumentado -->
                     </div>
                     <div class="mb-3">
                         <label for="precoProduto" class="form-label">Preço</label>
-                        <input type="number" class="form-control" id="precoProduto" required>
+                        <input type="number" class="form-control py-3" id="precoProduto" required><!-- padding aumentado -->
                     </div>
                     <div class="mb-3">
                         <label for="descricaoProduto" class="form-label">Descrição</label>
-                        <textarea class="form-control" id="descricaoProduto" rows="2" required></textarea>
+                        <textarea class="form-control py-3" id="descricaoProduto" rows="2" required></textarea><!-- padding aumentado -->
                     </div>
                     <div class="mb-3">
                         <label for="imagemProduto" class="form-label">Imagem (URL ou caminho local)</label>
-                        <input type="text" class="form-control" id="imagemProduto"
-                            placeholder="Ex: img/camiseta_marvel.jpg ou https://...">
+                        <input type="text" class="form-control py-3" id="imagemProduto"
+                            placeholder="Ex: img/camiseta_marvel.jpg ou https://..."><!-- padding aumentado -->
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button type="button" class="btn btn-secondary px-4 py-3" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary px-4 py-3">Cadastrar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Modal Listar Produtos -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="modalListarLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalListarLabel">Lista de Produtos</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <table class="table table-striped" id="tabelaProdutos">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Produtos serão inseridos aqui -->
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
+<!-- Tabela de produtos (inicialmente oculta) -->
+<div class="container py-4" id="tabelaProdutosContainer" style="display:none;">
+    <div class="card shadow-sm bg-light rounded p-4">
+        <h2 class="fw-bold mb-4">Lista de Produtos</h2>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle text-center" id="tabelaProdutos">
+                <thead class="table-danger">
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                        <th>Imagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produtos serão inseridos aqui -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
 <!-- Modal Excluir Produto -->
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="modalExcluirLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="formExcluir">
                 <div class="modal-header">
@@ -158,14 +149,14 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="excluirProduto" class="form-label">Selecione o Produto</label>
-                        <select class="form-select" id="excluirProduto" required>
+                        <select class="form-select py-3" id="excluirProduto" required>
                             <!-- Opções serão inseridas aqui -->
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-secondary px-4 py-3" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger px-4 py-3">Excluir</button>
                 </div>
             </form>
         </div>
@@ -174,7 +165,7 @@
 
 <!-- Modal Editar Produto -->
 <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="formEditar">
                 <div class="modal-header">
@@ -184,26 +175,30 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="editarProduto" class="form-label">Selecione o Produto</label>
-                        <select class="form-select" id="editarProduto" required>
+                        <select class="form-select py-3" id="editarProduto" required>
                             <!-- Opções serão inseridas aqui -->
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="editarNome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="editarNome" required>
+                        <input type="text" class="form-control py-3" id="editarNome" required>
                     </div>
                     <div class="mb-3">
                         <label for="editarPreco" class="form-label">Preço</label>
-                        <input type="number" class="form-control" id="editarPreco" required>
+                        <input type="number" class="form-control py-3" id="editarPreco" required>
                     </div>
                     <div class="mb-3">
                         <label for="editarDescricao" class="form-label">Descrição</label>
-                        <textarea class="form-control" id="editarDescricao" rows="2" required></textarea>
+                        <textarea class="form-control py-3" id="editarDescricao" rows="2" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarImagem" class="form-label">Imagem (URL ou caminho local)</label>
+                        <input type="text" class="form-control py-3" id="editarImagem" placeholder="Ex: img/camiseta_marvel.jpg ou https://...">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                    <button type="button" class="btn btn-secondary px-4 py-3" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success px-4 py-3">Salvar Alterações</button>
                 </div>
             </form>
         </div>
@@ -211,7 +206,49 @@
 </div>
 
 <script>
-    // Cadastrar Produto
+    // Função para exibir produtos na tabela da página
+    function exibirProdutosNaTabela() {
+        const tbody = document.querySelector('#tabelaProdutos tbody');
+        tbody.innerHTML = '';
+        const produtos = getProdutos(); // Busca do localStorage
+        produtos.forEach((prod, idx) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${idx + 1}</td>
+                <td>${prod.nome}</td>
+                <td>R$ ${parseFloat(prod.preco).toFixed(2)}</td>
+                <td>${prod.descricao}</td>
+                <td>
+                    <img src="${prod.imagem || 'img/sem-imagem.png'}" alt="Imagem" style="width:60px; height:60px; object-fit:cover; border-radius:6px;">
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // Alternar exibição da tabela de produtos
+    document.getElementById('btnListarProdutos').addEventListener('click', function () {
+        const tabela = document.getElementById('tabelaProdutosContainer');
+        if (tabela.style.display === 'none' || tabela.style.display === '') {
+            exibirProdutosNaTabela();
+            tabela.style.display = 'block';
+            this.textContent = 'Ocultar Produtos';
+        } else {
+            tabela.style.display = 'none';
+            this.textContent = 'Listar Produtos';
+        }
+    });
+
+    // Atualize também após cadastrar, editar ou excluir
+    function atualizarTudo() {
+        atualizarSelects();
+        // Atualiza a tabela se ela estiver visível
+        if (document.getElementById('tabelaProdutosContainer').style.display !== 'none') {
+            exibirProdutosNaTabela();
+        }
+    }
+
+    // Corrija os eventos das modais para garantir funcionamento
     document.getElementById('formCadastrar').addEventListener('submit', function (e) {
         e.preventDefault();
         const nome = document.getElementById('nomeProduto').value;
@@ -221,63 +258,17 @@
         adicionarProduto({ nome, preco, descricao, imagem }); // Salva no localStorage
         this.reset();
         bootstrap.Modal.getInstance(document.getElementById('exampleModal')).hide();
-        atualizarSelects();
+        atualizarTudo();
     });
 
-    // Listar Produtos
-    document.getElementById('exampleModal2').addEventListener('show.bs.modal', function () {
-        const tbody = document.querySelector('#tabelaProdutos tbody');
-        tbody.innerHTML = '';
-        const produtos = getProdutos(); // Busca do localStorage
-        produtos.forEach(prod => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${prod.nome}</td><td>${prod.preco}</td><td>${prod.descricao}</td>`;
-            tbody.appendChild(tr);
-        });
-    });
-
-    // Atualiza selects de excluir e editar
-    function atualizarSelects() {
-        const excluir = document.getElementById('excluirProduto');
-        const editar = document.getElementById('editarProduto');
-        excluir.innerHTML = '';
-        editar.innerHTML = '';
-        const produtos = getProdutos(); // Busca do localStorage
-        produtos.forEach((prod, idx) => {
-            const opt1 = document.createElement('option');
-            opt1.value = idx;
-            opt1.textContent = prod.nome;
-            excluir.appendChild(opt1);
-
-            const opt2 = document.createElement('option');
-            opt2.value = idx;
-            opt2.textContent = prod.nome;
-            editar.appendChild(opt2);
-        });
-    }
-
-    // Excluir Produto
     document.getElementById('formExcluir').addEventListener('submit', function (e) {
         e.preventDefault();
         const idx = document.getElementById('excluirProduto').value;
         removerProduto(idx); // Remove do localStorage
-        atualizarSelects();
+        atualizarTudo();
         bootstrap.Modal.getInstance(document.getElementById('exampleModal3')).hide();
     });
 
-    // Preencher campos ao selecionar produto para editar
-    document.getElementById('editarProduto').addEventListener('change', function () {
-        const idx = this.value;
-        const produtos = getProdutos(); // Busca do localStorage
-        if (produtos[idx]) {
-            document.getElementById('editarNome').value = produtos[idx].nome;
-            document.getElementById('editarPreco').value = produtos[idx].preco;
-            document.getElementById('editarDescricao').value = produtos[idx].descricao;
-            // Se quiser editar imagem, adicione um campo e preencha aqui
-        }
-    });
-
-    // Editar Produto
     document.getElementById('formEditar').addEventListener('submit', function (e) {
         e.preventDefault();
         const idx = document.getElementById('editarProduto').value;
@@ -285,23 +276,11 @@
         produtos[idx] = {
             nome: document.getElementById('editarNome').value,
             preco: document.getElementById('editarPreco').value,
-            descricao: document.getElementById('editarDescricao').value
-            // Adicione imagem aqui se quiser editar imagem também
+            descricao: document.getElementById('editarDescricao').value,
+            imagem: document.getElementById('editarImagem').value || "img/sem-imagem.png"
         };
         setProdutos(produtos); // Salva no localStorage
-        atualizarSelects();
+        atualizarTudo();
         bootstrap.Modal.getInstance(document.getElementById('exampleModal4')).hide();
-    });
-
-    // Atualiza selects ao abrir modais de excluir/editar
-    document.getElementById('exampleModal3').addEventListener('show.bs.modal', atualizarSelects);
-    document.getElementById('exampleModal4').addEventListener('show.bs.modal', function () {
-        atualizarSelects();
-        // Preenche campos do primeiro produto, se houver
-        const editar = document.getElementById('editarProduto');
-        if (editar.options.length > 0) {
-            editar.value = 0;
-            editar.dispatchEvent(new Event('change'));
-        }
     });
 </script>
